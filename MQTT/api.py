@@ -81,4 +81,4 @@ if __name__ == '__main__':
     client.on_message = on_message
     client.connect('broker.emqx.io', 1883, 60)
     client.loop_start()
-    app.run(host=f"{get_local_ip()}")
+    app.run(host=f"{get_local_ip()}", port=80)

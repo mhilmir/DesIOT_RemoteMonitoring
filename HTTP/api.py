@@ -39,4 +39,4 @@ class ESP(Resource):
 api.add_resource(ESP, '/esp')
 
 if __name__ == '__main__':
-    app.run(host=f"{get_local_ip()}")
+    app.run(host=f"{get_local_ip()}", port=80)
