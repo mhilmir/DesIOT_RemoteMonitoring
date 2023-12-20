@@ -15,8 +15,10 @@ api = Api(app)
 
 # untuk mendapatkan ip address
 def get_local_ip():
-    hostname = socket.gethostname()
-    ip_address = socket.gethostbyname(hostname)
+    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    s.connect(("8.8.8.8", 80))
+    ip_address = s.getsockname()[0]
+    s.close()
     return ip_address
 
 class ESP(Resource):
