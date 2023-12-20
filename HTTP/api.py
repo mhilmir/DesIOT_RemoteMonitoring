@@ -12,6 +12,7 @@ api = Api(app)
 def get_local_ip():
     hostname = socket.gethostname()
     ip_address = socket.gethostbyname(hostname)
+    print("ip_address:", ip_address)
     return ip_address
 
 class ESP(Resource):
